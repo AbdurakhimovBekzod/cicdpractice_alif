@@ -9,16 +9,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Скачиваем код
+      - name: Downloading code
         uses: actions/checkout@v4
 
-      - name: Устанавливаем Python
+      - name: Installing Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
 
-      - name: Ставим зависимости
+      - name: Installing requirements
         run: pip install -r requirements.txt
 
-      - name: Запускаем тесты
+      - name: Running tests
         run: pytest
