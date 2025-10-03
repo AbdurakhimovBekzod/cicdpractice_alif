@@ -1,1 +1,24 @@
+name: CI for Python
 
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Скачиваем код
+        uses: actions/checkout@v4
+
+      - name: Устанавливаем Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Ставим зависимости
+        run: pip install -r requirements.txt
+
+      - name: Запускаем тесты
+        run: pytest
