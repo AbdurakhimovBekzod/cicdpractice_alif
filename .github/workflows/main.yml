@@ -29,5 +29,5 @@ jobs:
 
     - name: Run tests
       run:
-        export PYTHONPATH=$PYTHONPATH:$(pwd)
+        #export PYTHONPATH=$PYTHONPATH:$(pwd)
         pytest tests/test_main_page.py -v -s --alluredir allure-results
